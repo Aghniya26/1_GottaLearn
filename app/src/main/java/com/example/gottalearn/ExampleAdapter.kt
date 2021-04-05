@@ -37,6 +37,7 @@ class ExampleAdapter(private val exampleList: List<ExampleItem>,
         val imageView: ImageView=itemView.findViewById(R.id.bookmark)
         val textView1: TextView=itemView.findViewById(R.id.text_view1)
         val textView2: TextView=itemView.findViewById(R.id.text_view2)
+        val line:View=itemView.findViewById(R.id.line)
 
         init {
             itemView.setOnClickListener(this)

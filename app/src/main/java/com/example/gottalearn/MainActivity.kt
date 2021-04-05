@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), ExampleAdapter.OnItemClickListerner {
-    private val exampleList= generateDummyList(500)
+    private val exampleList= generateDummyList(20)
     private val adapter=ExampleAdapter(exampleList, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +56,12 @@ class MainActivity : AppCompatActivity(), ExampleAdapter.OnItemClickListerner {
                 2 -> R.drawable.ic_bookmark_yellow
                 else -> R.drawable.ic_bookmark_red
             }
-            val item = ExampleItem(drawable, text1 = "Recyle View $i", text2 = "$i d 2h")
+            val text1=when(i % 3){
+                0->"APSI"
+                1->"PBB"
+                else->"PPL1"
+            }
+            val item = ExampleItem(drawable, text1, text2 = "$i d 2h")
             list+=item
 
         }
